@@ -1,0 +1,15 @@
+#!/usr/bin/env ruby
+require 'fileutils'
+def generate(path)
+  FileUtils.copy_entry 'template', path
+  Dir.chdir(path) do
+    system 'bundle install'
+  end
+end
+
+case ARGV[0]
+when 'generate'
+  generate ARGV[1]
+else
+  puts 'unimplemented'
+end
