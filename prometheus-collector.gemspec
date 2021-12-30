@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.email   = ['essjayhch@gmail.com']
 
   spec.summary  = 'Scaffold to collect prometheus style metrics from an application via a RACK interface'
-  spec.description = spec.summary
+  spec.description = File.read('README.md')
 
   spec.homepage = 'https://github.com/essjayhch/prometheus-collector'
   spec.license = 'MIT'

@@ -6,6 +6,7 @@ module Prometheus
     class Application
       def self.app
         Rack::Builder.app do
+          use Rack::CommonLogger, Prometheus::Collector.logger
           use Rack::Deflater
           use Prometheus::Middleware::Collector
           use Prometheus::Middleware::Exporter

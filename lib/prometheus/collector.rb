@@ -14,7 +14,7 @@ module Prometheus
       attr_writer :logger
 
       def logger
-        @logger ||= Logger.new STDOUT
+        @logger ||= Logger.new ENV.fetch('PROMETHEUS_COLLECTOR_LOGGER', STDOUT)
       end
 
     end
